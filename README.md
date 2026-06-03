@@ -169,6 +169,37 @@ Node.js Express API
 
 ---
 
+
+## Deployment Process
+
+The application is deployed on a VPS and managed using PM2.
+
+Deployment workflow:
+
+1. Push changes to the GitHub repository.
+2. GitHub Actions workflow is automatically triggered.
+3. The workflow connects to the VPS using SSH.
+4. Latest code is pulled from the repository.
+5. Dependencies are installed or updated.
+6. PM2 restarts the application.
+7. Updated version becomes available on the deployed server.
+
+### Useful Commands
+
+```bash
+pm2 list
+pm2 logs
+pm2 restart sample-api
+pm2 stop sample-api
+```
+
+### Deployed URL
+
+```text
+http://72.62.247.229:5010
+```
+
+
 ## Author
 
 Soumyadeepa Dutta
